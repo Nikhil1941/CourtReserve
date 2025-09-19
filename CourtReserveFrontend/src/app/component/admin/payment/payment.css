@@ -1,0 +1,55 @@
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #6a0dad;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  text-decoration: underline;
+}
+    .payment-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.payment-card {
+  background: #f5f0ff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: #6a0dad;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-table th,
+.payment-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.payment-table th {
+  background: #e6ccff;
+  color: #4b0082;
+}

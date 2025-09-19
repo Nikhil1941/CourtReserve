@@ -1,0 +1,105 @@
+<nav class="navbar">
+  <div class="nav-left">🏸 Court Reserve</div>
+  <div class="nav-right">
+    <a href="./admin/dashboard">Dashboard</a>
+    <a href="./admin/court">Courts</a>
+    <a href="./admin/user">Users</a>
+    <a href="./admin/payment">Payments</a>
+    <a href="./admin/review">Reviews</a>
+    <!--<a href="./user/profile">Profile</a>-->
+    <a href="./admin/login">Logout</a>
+  </div>
+</nav>
+<div class="booking-container">
+  <div class="booking-card">
+    <h2 class="title">Booking Management</h2>
+
+    <!-- Booking List Table -->
+    <table class="booking-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Court</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Duration (hrs)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.id }}</td>
+          <td>{{ booking.court }}</td>
+          <td>{{ booking.date }}</td>
+          <td>{{ booking.time }}</td>
+          <td>{{ booking.duration }}</td>
+          <td>
+            <button class="btn-action edit" (click)="editBooking(booking)">Edit</button>
+            <button class="btn-action delete" (click)="deleteBooking(booking.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Button to add booking -->
+    <button class="btn-new" (click)="newBooking()">+ New Booking</button>
+
+    <!-- Create New Booking Form -->
+    <div *ngIf="createMode" class="edit-section">
+      <h3>Create New Booking</h3>
+      <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
+        <div class="form-group">
+          <label for="court">Court Name</label>
+          <input type="text" id="court" formControlName="court" />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" formControlName="date" />
+        </div>
+
+        <div class="form-group">
+          <label for="time">Time</label>
+          <input type="time" id="time" formControlName="time" />
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Duration (hours)</label>
+          <input type="number" id="duration" formControlName="duration" min="1" />
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="!bookingForm.valid">Add Booking</button>
+        <button type="button" class="btn-cancel" (click)="cancelAction()">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Edit Booking Form -->
+    <div *ngIf="editMode" class="edit-section">
+      <h3>Edit Booking</h3>
+      <form [formGroup]="bookingForm" (ngSubmit)="updateBooking()">
+        <div class="form-group">
+          <label for="court">Court Name</label>
+          <input type="text" id="court" formControlName="court" />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" formControlName="date" />
+        </div>
+
+        <div class="form-group">
+          <label for="time">Time</label>
+          <input type="time" id="time" formControlName="time" />
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Duration (hours)</label>
+          <input type="number" id="duration" formControlName="duration" min="1" />
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="!bookingForm.valid">Save Changes</button>
+        <button type="button" class="btn-cancel" (click)="cancelAction()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

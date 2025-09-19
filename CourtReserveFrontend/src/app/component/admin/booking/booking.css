@@ -1,0 +1,163 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #6a0dad;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  text-decoration: underline;
+}
+.booking-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #e6e6fa, #d8bfd8);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.booking-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(90, 60, 120, 0.25);
+  width: 90%;
+  max-width: 900px;
+}
+
+.title {
+  color: #6a5acd;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Table */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.booking-table th {
+  background: #9370db;
+  color: white;
+}
+
+.btn-action {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.btn-action.edit {
+  background: #9370db;
+  color: white;
+}
+
+.btn-action.edit:hover {
+  background: #7a5ac9;
+}
+
+.btn-action.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-action.delete:hover {
+  background: #b52d3b;
+}
+
+/* Add New Booking Button */
+.btn-new {
+  display: inline-block;
+  background: #6a5acd;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.btn-new:hover {
+  background: #5a4bb5;
+}
+
+/* Form Section */
+.edit-section {
+  background: #f8f5ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #d8bfd8;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid #d8bfd8;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  background: #9370db;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background: #7a5ac9;
+}
+
+.btn-cancel {
+  margin-left: 10px;
+  background: #aaa;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: #888;
+}

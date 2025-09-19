@@ -1,0 +1,119 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #6a0dad;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  text-decoration: underline;
+}
+.profile-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  line-height: 1.8;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background: #007bff;
+  color: white;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.edit-form input,
+.edit-form textarea {
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.btn-save {
+  background: #28a745;
+  color: white;
+}
+
+.btn-cancel {
+  background: #dc3545;
+  color: white;
+}
+
+.profile-pic-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid #007bff;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.pic-hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}

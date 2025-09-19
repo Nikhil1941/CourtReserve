@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #6a0dad;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  text-decoration: underline;
+}
+
+.home-container {
+  margin: 30px;
+}
+
+.courts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.court-card {
+  background: lavender;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.court-card:hover {
+  transform: scale(1.05);
+}
+
+.court-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-right :hover{
+    text-decoration: underline;
+}

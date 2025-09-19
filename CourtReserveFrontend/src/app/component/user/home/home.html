@@ -1,0 +1,26 @@
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-left">🏸 Court Reserve</div>
+  <div class="nav-right">
+    <a href="./user/home">Home</a>
+    <a href="./user/home">Courts</a>
+    <a href="./user/profile">Profile</a>
+    <a href="./user/userlogin">Logout</a>
+  </div>
+</nav>
+
+<!-- Courts Section -->
+<div class="home-container">
+  <h2>Available Courts</h2>
+  <div class="courts-grid">
+    <div
+      class="court-card"
+      *ngFor="let court of courts"
+      (click)="bookCourt(court)"
+    >
+      <img [src]="court.image" alt="{{ court.name }}" class="court-img" />
+      <h3>{{ court.name }}</h3>
+      <p>{{ court.type }}</p>
+    </div>
+  </div>
+</div>

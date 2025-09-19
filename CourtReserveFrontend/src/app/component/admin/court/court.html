@@ -1,0 +1,110 @@
+<nav class="navbar">
+  <div class="nav-left">🏸 Court Reserve</div>
+  <div class="nav-right">
+    <a href="./admin/dashboard">Dashboard</a>
+    <a href="./admin/booking">Bookings</a>
+    <a href="./admin/payment">Payments</a>
+    <a href="./admin/review">Reviews</a>
+    <a href="./admin/user">Users</a>
+    <!--<a href="./user/profile">Profile</a>-->
+    <a href="./admin/login">Logout</a>
+  </div>
+</nav>
+<div class="court-container">
+  <div class="court-card">
+    <h2 class="title">Court Management</h2>
+
+    <!-- Court List -->
+    <table class="court-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Court Name</th>
+          <th>Type</th>
+          <th>Location</th>
+          <th>Available</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let court of courts">
+          <td>{{ court.id }}</td>
+          <td>{{ court.name }}</td>
+          <td>{{ court.type }}</td>
+          <td>{{ court.location }}</td>
+          <td>
+            <span [ngClass]="court.available ? 'available' : 'unavailable'">
+              {{ court.available ? 'Yes' : 'No' }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-action edit" (click)="editCourt(court)">Edit</button>
+            <button class="btn-action delete" (click)="deleteCourt(court.id)">Delete</button>
+            <button class="btn-action toggle" (click)="toggleAvailability(court)">
+              {{ court.available ? 'Disable' : 'Enable' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Suggestions when unavailable -->
+    <div *ngIf="suggestions.length > 0" class="suggestions">
+      <h3>Alternate Suggestions</h3>
+      <ul>
+        <li *ngFor="let s of suggestions">{{ s }}</li>
+      </ul>
+    </div>
+
+    <!-- Button to add court -->
+    <button class="btn-new" (click)="newCourt()">+ Add Court</button>
+
+    <!-- Create Court Form -->
+    <div *ngIf="createMode" class="edit-section">
+      <h3>Add New Court</h3>
+      <form [formGroup]="courtForm" (ngSubmit)="addCourt()">
+        <div class="form-group">
+          <label for="name">Court Name</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Court Type</label>
+          <input type="text" id="type" formControlName="type" />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" formControlName="location" />
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="!courtForm.valid">Add Court</button>
+        <button type="button" class="btn-cancel" (click)="cancelAction()">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Edit Court Form -->
+    <div *ngIf="editMode" class="edit-section">
+      <h3>Edit Court</h3>
+      <form [formGroup]="courtForm" (ngSubmit)="updateCourt()">
+        <div class="form-group">
+          <label for="name">Court Name</label>
+          <input type="text" id="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Court Type</label>
+          <input type="text" id="type" formControlName="type" />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" formControlName="location" />
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="!courtForm.valid">Save Changes</button>
+        <button type="button" class="btn-cancel" (click)="cancelAction()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

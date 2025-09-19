@@ -1,0 +1,23 @@
+<div class="booking-container" *ngIf="court">
+  <h2>Book {{ court.name }}</h2>
+  <img [src]="court.image" alt="{{ court.name }}" class="court-img" />
+
+  <p><strong>Type:</strong> {{ court.type }}</p>
+
+  <div class="form-group">
+    <label>Select Date:</label>
+    <input type="date" [(ngModel)]="bookingDate" />
+  </div>
+
+  <div class="form-group">
+    <label>Select Start Time:</label>
+    <input type="time" [(ngModel)]="bookingTime" />
+  </div>
+  <div class="form-group">
+    <label>Select End Time:</label>
+    <input type="time" [(ngModel)]="bookingEndTime" />
+  </div>
+
+  <button (click)="confirmBooking()">Confirm Booking</button>
+  <button (click)="makePayment()">Proceed to Payment</button>
+</div>

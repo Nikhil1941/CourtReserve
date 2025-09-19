@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="nav-left">🏸 Court Reserve</div>
+  <div class="nav-right">
+    <a href="./admin/dashboard">Dashboard</a>
+    <a href="./admin/booking">Bookings</a>
+    <a href="./admin/court">Courts</a>
+    <a href="./admin/user">Users</a>
+    <a href="./admin/payment">Payments</a>
+    <!--<a href="./user/profile">Profile</a>-->
+    <a href="./admin/login">Logout</a>
+  </div>
+</nav>
+<div class="review-container">
+  <div class="review-card">
+    <h2 class="title">Court Reviews</h2>
+
+    <div class="review-list">
+      <div class="review-item" *ngFor="let r of reviews">
+        <h3 class="username">{{ r.username }}</h3>
+        <p class="court">Court: {{ r.court }}</p>
+
+        <!-- Star Ratings -->
+        <div class="stars">
+          <span *ngFor="let star of [1,2,3,4,5]" 
+                [class.filled]="star <= r.rating">★</span>
+        </div>
+
+        <p class="comment">"{{ r.comment }}"</p>
+        <p class="date">{{ r.date }}</p>
+      </div>
+    </div>
+  </div>
+</div>
